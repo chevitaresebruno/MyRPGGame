@@ -1,43 +1,23 @@
 from __init__ import *
 
+from scripts.game.Game import Game
 from scripts.test.Block import Block
 from scripts.test.BlockStates import BlockStates
 
 
 def main() -> int:
-    pg.init()
+    Game.init()
     
-    window = pg.display.set_mode((200, 200))
-    fps = 60
-    clock = pg.time.Clock()
+    game = Game(60, (200, 200))
     
     block = Block(BlockStates.RGB)
     
     spriteGroup = pg.sprite.Group()
     spriteGroup.add(block)
     
-    while True:
-        clock.tick(fps)
-        
-        for e in pg.event.get():
-            if (e.type == pg.QUIT):
-                pg.quit()
-                quit()
-            
-            elif(e.type == pg.KEYDOWN):
-                match(e.key):
-                    case pg.K_r:
-                        block.swapState(BlockStates.RGB)
-                    case pg.K_c:
-                        block.swapState(BlockStates.CMYK)
-                
-        window.fill((20, 20, 20))
+    game.mainLoop(block, spriteGroup)
 
-        spriteGroup.update()
-        spriteGroup.draw(window)
-        
-        pg.display.flip()
-                
+    Game.end()
 
 if __name__ == "__main__":
     main()
