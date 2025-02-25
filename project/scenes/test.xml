@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-<background>20 20 20</background>
-<layer>
-    <block>
-        <pos>0 0</pos>
-    </block>
-</layer>
+    <import module="src.Player"></import>
+
+    <background>20 20 20</background>    
+    <layer>
+        <gameObject type="Player" id="Player">
+            <pos type="listInt"> 0 0 </pos>
+        </gameObject>
+    </layer>
 </root>

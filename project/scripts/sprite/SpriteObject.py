@@ -1,17 +1,21 @@
 from .__init__ import *
 
+from scripts.shared.RectObject import RectObject
+from scripts.game.window.IDrawble import IDrawble
+
 from .Repository import Repository
 
 
-class SpriteObject(Sprite):
+class SpriteObject(Sprite, RectObject, IDrawble):
     def __init__(self, repository: Repository, state: Enum):
         super().__init__()
+        RectObject.__init__(self)
         
         self.__repository: Repository = repository
         self.__state: Enum = state
 
         self.image: Surface = self.__repository.getFirst()
-        self.rect: Rect = self.image.get_rect()
+        self.rect = self.image.get_rect()  # Come from Rect Object
 
         self.__current: int = 0
         self.__timer = Timer(self.__repository.timeUpdate(self.__state))
@@ -34,4 +38,9 @@ class SpriteObject(Sprite):
         self.__getActual()
         self.__timer.reset()
             
-            
+    def surface(self) -> Surface:
+        return self.image
+    
+    def position(self) -> Rect:
+        return self.rect
+

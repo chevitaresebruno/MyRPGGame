@@ -1,21 +1,16 @@
 from __init__ import *
 
 from scripts.game.Game import Game
-from scripts.test.Block import Block
-from scripts.test.BlockStates import BlockStates
+from scripts.tools.SceneLoader import SceneLoader
 
 
 def main() -> int:
     Game.init()
     
     game = Game(60, (200, 200))
+    game.load(SceneLoader.loadFromXml(SCENES_DIR / "test.xml"))
     
-    block = Block(BlockStates.RGB)
-    
-    spriteGroup = pg.sprite.Group()
-    spriteGroup.add(block)
-    
-    game.mainLoop(block, spriteGroup)
+    game.mainLoop()
 
     Game.end()
 

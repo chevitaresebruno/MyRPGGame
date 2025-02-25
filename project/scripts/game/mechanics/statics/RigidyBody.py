@@ -2,10 +2,13 @@ from pygame import Rect
 from pygame.math import Vector2
 
 
-class RigidyBody:
-    def __init__(self, rect: Rect):
-        self.rect: Rect = rect
+from scripts.shared.RectObject import RectObject
 
-    def move(self, vector: Vector2):
+
+class RigidyBody(RectObject):
+    def __init__(self):
+        RectObject.__init__(self)
+
+    def move(self, vector: Vector2) -> None:
         self.rect.move(vector.x, vector.y)
 

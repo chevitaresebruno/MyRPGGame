@@ -14,6 +14,11 @@ class EventController:
         self.kdown: list[Action] = list()
         self.kup: list[Action] = list()
 
+    def clear(self) -> None:
+        self.quit.clear()
+        self.kdown.clear()
+        self.kup.clear()
+
     def loop(self):
         for self.e in get():
             match self.e.type:

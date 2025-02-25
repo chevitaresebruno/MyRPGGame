@@ -1,37 +1,26 @@
 from .__init__ import *
 
-from pathlib import Path
-import xml.etree.ElementTree as ET
+from pygame import Surface
 
-from .Layer import Layer
 from .Scene import Scene
-from .ScenesTags import ScenesTags
-from .BackgroundLayer import BackgroundLayer
 
 
 class Window:
     def __init__(self, size: tuple[int]):
-        self.__window: Scene = set_mode(size)
+        self.__window: Surface = set_mode(size)
         self.__scene: Scene = None
         
     def update(self) -> None:
         self.__window.fill()
         
-    def load(self, scene: Path) -> None:
-        tree = ET.parse(scene)
-        main = tree.getroot()
-        
-        self.__scene = Scene()
-        
-        for element in main:
-            match element.tag:
-                case ScenesTags.BACKGROUND.value:
-                    self.__scene.add(BackgroundLayer([int(x) for x in element.text.split()]))
-                case ScenesTags.LAYER.value:
-                    pass
+    def load(self, scene: Scene) -> None:
+        self.__scene = scene
     
     def draw(self):
-        self.__scene.draw(self.__window)
+        self.__scene.getBackgroundLayer().draw(self.__window)
+        for layer in self.__scene.getLayers():
+            for obj in layer:
+                self.__window.blit(obj.surface(), obj.position())
         
     @property
     def surface(self) -> Surface:
