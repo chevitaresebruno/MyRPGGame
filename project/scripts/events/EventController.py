@@ -1,7 +1,7 @@
 import pygame
 from pygame.event import Event, get
 
-from scripts.game.mechanics.interactives.IntreactiveMechanic import InteractiveMechanic
+from scripts.mechanics.interactives.IntreactiveMechanic import InteractiveMechanic
 
 from .Action import Action
 from .EventCartridge import EventCartridge

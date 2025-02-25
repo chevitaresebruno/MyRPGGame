@@ -5,7 +5,7 @@ from pygame import Surface
 
 class IDrawble(ABC):
     def __init__(self):
-        super().__init__()
+        ABC.__init__(self)
     
     @abstractmethod
     def surface(self) -> Surface:

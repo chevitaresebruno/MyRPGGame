@@ -1,7 +1,7 @@
-from .__init__ import *
+from .. import *
 
-from .ILodable import ILoadable
-from .EventCartridge import EventCartridge
+from ..interfaces.ILodable import ILoadable
+from ..EventCartridge import EventCartridge
 
 
 class ExitAction(ILoadable):

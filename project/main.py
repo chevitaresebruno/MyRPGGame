@@ -1,7 +1,7 @@
 from __init__ import *
 
-from scripts.game.Game import Game
-from scripts.tools.SceneLoader import SceneLoader
+from scripts.Game import Game
+from scripts.tools.sceneLoader.SceneLoader import SceneLoader
 
 
 def main() -> int:

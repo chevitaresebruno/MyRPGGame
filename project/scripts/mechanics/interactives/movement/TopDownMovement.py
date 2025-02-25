@@ -1,13 +1,14 @@
 import pygame
-from pygame import Rect
 from pygame.event import Event
 from pygame.math import Vector2
 
-from scripts.game.events.EventCartridge import EventCartridge
-from scripts.game.mechanics.interactives.IntreactiveMechanic import InteractiveMechanic
-from scripts.game.mechanics.statics.RigidyBody import RigidyBody
+
+from scripts.events.EventCartridge import EventCartridge
+from scripts.mechanics.statics.RigidyBody import RigidyBody
+from scripts.mechanics.interactives.IntreactiveMechanic import InteractiveMechanic
 
 
+#TODO: Fix Interactive Mechanic Herance Bug
 class TopDownMovement(RigidyBody):
     def __init__(self):
         RigidyBody.__init__(self)

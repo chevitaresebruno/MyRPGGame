@@ -1,11 +1,11 @@
-from scripts.game.mechanics.interactives.movement.TopDownMovement import TopDownMovement
-from scripts.sprite.SpriteObject import SpriteObject
-from scripts.game.window.IGameObject import IGameObject
+from pygame.math import Vector2
+
 
 from scripts.test.BlockStates import BlockStates
+from scripts.scene.IGameObject import IGameObject
+from scripts.sprite.SpriteObject import SpriteObject
 from scripts.test.BlockRepository import BlockRepository
-
-from pygame.math import Vector2
+from scripts.mechanics.interactives.movement.TopDownMovement import TopDownMovement
 
 
 class Player(TopDownMovement, SpriteObject, IGameObject):

@@ -1,13 +1,13 @@
-from .__init__ import *
+from .. import *
 
 from typing import Iterable
 
-from .EventCartridge import EventCartridge
+from ..EventCartridge import EventCartridge
 
 
 class ILoadable(ABC):
     def __init__(self):
-        super().__init__()
+        ABC.__init__(self)
 
     @abstractmethod
     def toLoad(self) -> EventCartridge | Iterable[EventCartridge]:

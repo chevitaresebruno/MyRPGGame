@@ -1,17 +1,18 @@
+from .__init__ import *
+
 import importlib
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
-from ..game.window.Layer import Layer
-from ..game.window.LayersTags import LayersTags
-from ..game.window.BackgroundLayer import BackgroundLayer
+from scripts.scene.Scene import Scene
+from scripts.window.layers.Layer import Layer
+from scripts.scene.IGameObject import IGameObject
+from scripts.window.layers.BackgroundLayer import BackgroundLayer
 
-from ..game.window.Scene import Scene
-from ..game.window.ScenesTags import ScenesTags
 
-from ..game.window.IGameObject import IGameObject
-
-from .sceneLoader.GameObjectTagsTypes import GameObjectTagsTypes
+from .LayersTags import LayersTags
+from .ScenesTags import ScenesTags
+from .GameObjectTagsTypes import GameObjectTagsTypes
 
 
 class SceneLoader:

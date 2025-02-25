@@ -3,7 +3,7 @@ from .__init__ import *
 
 class Repository(ABC):
     def __init__(self):
-        super().__init__()
+        ABC.__init__(self)
         
     @abstractmethod
     def getBase(self) -> tuple[Surface]:

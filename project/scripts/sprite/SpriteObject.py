@@ -1,14 +1,17 @@
 from .__init__ import *
 
+from pygame.sprite import Sprite
+
+from scripts.time.Timer import Timer
 from scripts.shared.RectObject import RectObject
-from scripts.game.window.IDrawble import IDrawble
+from scripts.window.interface.IDrawble import IDrawble
 
 from .Repository import Repository
 
 
 class SpriteObject(Sprite, RectObject, IDrawble):
     def __init__(self, repository: Repository, state: Enum):
-        super().__init__()
+        Sprite.__init__(self)
         RectObject.__init__(self)
         
         self.__repository: Repository = repository

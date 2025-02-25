@@ -1,8 +1,7 @@
-from .__init__ import *
-
 from pygame import Surface
+from pygame.display import set_mode
 
-from .Scene import Scene
+from scripts.scene.Scene import Scene
 
 
 class Window:

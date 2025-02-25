@@ -9,7 +9,7 @@ from .BlockStates import BlockStates
 
 class BlockRepository(Repository):
     def __init__(self):
-        super().__init__()
+        Repository.__init__(self)
         self.rgb: tuple[Surface] = (BlockImage.build(RED, (20, 20)), BlockImage.build(GREEN, (20, 20)), BlockImage.build(BLUE, (20, 20)))
         self.cmyk: tuple[Surface] = (BlockImage.build(CYAN, (20, 20)), BlockImage.build(MAGENTA, (20, 20)), BlockImage.build(YELLOW, (20, 20)), BlockImage.build(BLACK, (20, 20)))
         

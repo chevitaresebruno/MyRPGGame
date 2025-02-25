@@ -3,10 +3,10 @@ from __init__ import *
 
 from scripts.time.Ticker import Ticker
 from .window.Window import Window
-from .window.Scene import Scene
+from .scene.Scene import Scene
 
 from .events.EventController import EventController
-from .events.ExitAction import ExitAction
+from .events.prefabsActions.ExitAction import ExitAction
 
 class Game:
     def __init__(self, fps: int, windowSize: tuple[int, int]):

@@ -26,5 +26,5 @@ class Layer:
         while current:
             yield current.obj
             current = current.next
-            
+
         

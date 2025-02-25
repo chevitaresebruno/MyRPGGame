@@ -1,10 +1,8 @@
 from .__init__ import *
 
-from scripts.game.mechanics.interactives.IntreactiveMechanic import InteractiveMechanic
-
 from .IGameObject import IGameObject
-from .Layer import Layer
-from .BackgroundLayer import BackgroundLayer
+from scripts.window.layers.Layer import Layer
+from scripts.window.layers.BackgroundLayer import BackgroundLayer
 
 
 class Scene:

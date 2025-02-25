@@ -5,6 +5,6 @@ from .BlockStates import BlockStates
 
 class Block(SpriteObject):
     def __init__(self, initialState: BlockStates):
-        super().__init__(BlockRepository(), initialState)
+        SpriteObject.__init__(self, BlockRepository(), initialState)
         
         

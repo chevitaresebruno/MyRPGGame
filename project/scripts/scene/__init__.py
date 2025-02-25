@@ -1,0 +1,1 @@
+from scripts.mechanics.interactives.IntreactiveMechanic import InteractiveMechanic

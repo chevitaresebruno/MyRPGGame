@@ -1,4 +1,4 @@
-from .IDrawble import IDrawble
+from .__init__ import *
 
 
 class LayerObject:

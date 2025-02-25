@@ -1,4 +1,4 @@
-from enum import Enum
+from .__init__ import *
 
 
 class LayersTags(Enum):
